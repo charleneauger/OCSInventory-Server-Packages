@@ -38,6 +38,9 @@ rm -rf %{buildroot}
 %doc %{_docdir}/%{name}/README
 
 %changelog
+* Wed Sep 09 2026 OCS Inventory Release Bot <ci@ocsinventory-ng.org> - 3.0.0~rc2-1
+- Release 3.0.0-rc2.
+
 * Wed Aug 26 2026 OCS Inventory Release Bot <ci@ocsinventory-ng.org> - 3.0.0~rc2-1
 - Release 3.0.0-rc2.
 
