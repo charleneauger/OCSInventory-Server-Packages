@@ -127,8 +127,8 @@ jobs:
             ocsinventory-*/deb/*.deb
             ocsinventory-*/deb/*.changes
             ocsinventory-*/deb/*.dsc
-            ocsinventory-*/deb/*.orig.tar.*
-            ocsinventory-*/deb/*.debian.tar.*
+            ocsinventory-*/deb/*.tar.gz
+            ocsinventory-*/deb/*.tar.xz
 
   # ---------------------------------------------------------------------
   # 3. Build .rpm for each component, using mock for a clean chroot build.
@@ -260,7 +260,7 @@ jobs:
         run: |
           mkdir -p release-assets
           find artifacts -type f \( -name '*.deb' -o -name '*.rpm' -o -name '*.dsc' \
-            -o -name '*.orig.tar.*' -o -name '*.debian.tar.*' -o -name '*-docker.tar.gz' \) \
+            -o -name '*-docker.tar.gz' -o \( \( -name '*.tar.gz' -o -name '*.tar.xz' \) ! -name '*-docker.tar.gz' \) \) \
             -exec cp -f {} release-assets/ \;
           ls -la release-assets
 
